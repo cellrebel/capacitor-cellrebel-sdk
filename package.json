@@ -1,12 +1,13 @@
 {
   "name": "capacitor-cellrebel-sdk",
-  "version": "1.8.3",
+  "version": "1.8.4",
   "description": "Capacitor plugin for CellRebelSDK",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
   "unpkg": "dist/plugin.js",
   "files": [
+    "android/libs/"
     "android/src/main/",
     "android/build.gradle",
     "dist/",
