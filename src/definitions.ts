@@ -1,3 +1,5 @@
 export interface CellRebelSDKPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  init(options: { clientKey: string }): Promise<void>;
+  startTracking(): Promise<void>;
+  stopTracking(): Promise<void>;
 }

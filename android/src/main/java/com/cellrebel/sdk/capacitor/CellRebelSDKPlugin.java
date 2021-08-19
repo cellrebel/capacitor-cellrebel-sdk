@@ -1,6 +1,8 @@
 package com.cellrebel.sdk.capacitor;
 
-import com.getcapacitor.JSObject;
+import android.os.Handler;
+
+import com.cellrebel.sdk.workers.TrackingManager;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
@@ -9,14 +11,46 @@ import com.getcapacitor.annotation.CapacitorPlugin;
 @CapacitorPlugin(name = "CellRebelSDK")
 public class CellRebelSDKPlugin extends Plugin {
 
-    private CellRebelSDK implementation = new CellRebelSDK();
+    @PluginMethod
+    public void init(PluginCall call) {
+        String clientKey = call.getString("clientKey");
+        Handler mainHandler = new Handler(getContext().getMainLooper());
+        Runnable myRunnable = new Runnable() {
+            @Override
+            public void run() {
+                TrackingManager.init(getContext(), clientKey);
+            }
+        };
+        mainHandler.post(myRunnable);
+
+        call.resolve();
+    }
 
     @PluginMethod
-    public void echo(PluginCall call) {
-        String value = call.getString("value");
+    public void startTracking(PluginCall call) {
+        Handler mainHandler = new Handler(getContext().getMainLooper());
+        Runnable myRunnable = new Runnable() {
+            @Override
+            public void run() {
+                TrackingManager.startTracking(getContext());
+            }
+        };
+        mainHandler.post(myRunnable);
 
-        JSObject ret = new JSObject();
-        ret.put("value", implementation.echo(value));
-        call.resolve(ret);
+        call.resolve();
+    }
+
+    @PluginMethod
+    public void stopTracking(PluginCall call) {
+        Handler mainHandler = new Handler(getContext().getMainLooper());
+        Runnable myRunnable = new Runnable() {
+            @Override
+            public void run() {
+                TrackingManager.stopTracking(getContext());
+            }
+        };
+        mainHandler.post(myRunnable);
+
+        call.resolve();
     }
 }

@@ -49,9 +49,30 @@ repositories {
 
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.aar'])
     implementation project(':capacitor-android')
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.google.android.gms:play-services-ads:16.0.0'
+    implementation "androidx.lifecycle:lifecycle-runtime:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    implementation "com.squareup.retrofit2:retrofit:2.6.4"
+    implementation "androidx.room:room-runtime:2.2.5"
+    api "com.squareup.retrofit2:converter-gson:2.6.4"
+    api("com.squareup.okhttp3:okhttp") {
+        version {
+            strictly "3.12.8"
+        }
+    }
+    api("com.squareup.okhttp3:logging-interceptor") {
+        version {
+            strictly "3.12.8"
+        }
+    }
+
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    api 'androidx.work:work-runtime:2.5.0'
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"

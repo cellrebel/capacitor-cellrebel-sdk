@@ -11,9 +11,51 @@ npx cap sync
 
 ## API
 
-<docgen-index></docgen-index>
+<docgen-index>
+
+* [`init(...)`](#init)
+* [`startTracking()`](#starttracking)
+* [`stopTracking()`](#stoptracking)
+
+</docgen-index>
 
 <docgen-api>
-<!-- run docgen to generate docs from the source -->
-<!-- More info: https://github.com/ionic-team/capacitor-docgen -->
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+
+### init(...)
+
+```typescript
+init(options: { clientKey: string; }) => any
+```
+
+| Param         | Type                                |
+| ------------- | ----------------------------------- |
+| **`options`** | <code>{ clientKey: string; }</code> |
+
+**Returns:** <code>any</code>
+
+--------------------
+
+
+### startTracking()
+
+```typescript
+startTracking() => any
+```
+
+**Returns:** <code>any</code>
+
+--------------------
+
+
+### stopTracking()
+
+```typescript
+stopTracking() => any
+```
+
+**Returns:** <code>any</code>
+
+--------------------
+
 </docgen-api>
