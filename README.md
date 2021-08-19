@@ -35,3 +35,4 @@ CellRebelSDK.stopTracking()
 Calling `clearUserData` will deinitialize CellRebelSDK and remove all local data. `init` method should be called before using CellRebelSDK again. 
 
 ## Demo project
+https://github.com/cellrebel/capacitor-cellrebel-sdk/tree/main/example
