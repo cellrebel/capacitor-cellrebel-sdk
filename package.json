@@ -1,6 +1,6 @@
 {
   "name": "capacitor-cellrebel-sdk",
-  "version": "1.8.4",
+  "version": "1.8.6",
   "description": "Capacitor plugin for CellRebelSDK",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
